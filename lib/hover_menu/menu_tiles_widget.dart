@@ -1,37 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../anim/center_to_top_animation_tile.dart';
+import '../anim/right_to_left_animation_tile.dart';
+import '../anim/spring_across_axis_animation_tile.dart';
+import '../anim/swing_across_axis_animation_tile.dart';
+import '../anim/top_to_bottom_animation_tile.dart';
+import '../model/header_model.dart';
+import '../model/menu_model.dart';
+import '../utils/animation_type.dart';
+import '../utils/header_position.dart';
+import '../anim/left_to_right_animation_tile.dart';
 import '../hover_menu/scroll_event_notifier.dart';
 
-///Under development
-class SwingMenu extends StatefulWidget {
+class MenuTilesWidget extends StatefulWidget {
   final Widget child;
   final int index;
   final bool hovered;
-  final List<String> menuTiles;
+  final List<MenuModel> menuTiles;
+  final List<HeaderModel> headerTiles;
   final BoxDecoration menuBoxDecoration;
   final Color menuTextColor;
   final double menuTextSize;
+  final HeaderPosition headerPosition;
+  final AnimationType animationType;
 
-  const SwingMenu({
+  const MenuTilesWidget({
     Key? key,
     required this.menuTiles,
+    required this.headerTiles,
     required this.child,
     required this.index,
     required this.hovered,
     required this.menuBoxDecoration,
     required this.menuTextColor,
     required this.menuTextSize,
+    required this.headerPosition,
+    required this.animationType,
   }) : super(key: key);
 
   @override
-  _SwingMenuState createState() => _SwingMenuState();
+  _MenuTilesWidgetState createState() => _MenuTilesWidgetState();
 }
 
-class _SwingMenuState extends State<SwingMenu>
+class _MenuTilesWidgetState extends State<MenuTilesWidget>
     with SingleTickerProviderStateMixin {
   final GlobalKey _globalKey = GlobalKey();
   OverlayEntry? entry;
-  final _menuHover = List.filled(5, false);
+  List _menuHover = [];
   ScrollController controller = ScrollController();
   bool allowAddEntry = true;
 
@@ -39,7 +54,8 @@ class _SwingMenuState extends State<SwingMenu>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      entry = overlayEntry();
+      _menuHover = List.filled(widget.headerTiles.length, false);
+      entry = _overlayEntry();
       entry?.addListener(() {
         allowAddEntry = !allowAddEntry;
       });
@@ -76,11 +92,18 @@ class _SwingMenuState extends State<SwingMenu>
   }
 
   ///Adding overlay entry
-  overlayEntry() {
+  OverlayEntry _overlayEntry() {
     return OverlayEntry(builder: (BuildContext overlayContext) {
       final offset = _getPosition();
       return Positioned(
-        top: offset.dy + 50,
+        top: (widget.headerPosition == HeaderPosition.bottomLeft ||
+                widget.headerPosition == HeaderPosition.bottomRight)
+            ? null
+            : 50,
+        bottom: (widget.headerPosition == HeaderPosition.bottomLeft ||
+                widget.headerPosition == HeaderPosition.bottomRight)
+            ? 50
+            : null,
         left: offset.dx + 5,
         child: ChangeNotifierProvider.value(
           value: ScrollEventNotifier(false, false),
@@ -104,7 +127,7 @@ class _SwingMenuState extends State<SwingMenu>
                     height: 400,
                     child: SingleChildScrollView(
                       controller: controller,
-                      physics:  const AlwaysScrollableScrollPhysics(),
+                      physics: const AlwaysScrollableScrollPhysics(),
                       child: Column(
                         children: _buildListItems(),
                       ),
@@ -151,11 +174,8 @@ class _SwingMenuState extends State<SwingMenu>
                       ? Tween<double>(begin: 1, end: 0)
                       : Tween<double>(begin: 0, end: 1),
                   builder: (_, double value, _child) {
-                    return SwingAnimationTile(
-                      value: value,
-                      child: _child!,
-                      index: i,
-                    );
+                    return _defineAnimationType(
+                        widget.animationType, value, _child, i);
                   },
                   child: InkWell(
                     onTap: () {
@@ -173,8 +193,9 @@ class _SwingMenuState extends State<SwingMenu>
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Text(
-                            widget.menuTiles[i],
+                            widget.menuTiles[i].menuName ?? '',
                             textAlign: TextAlign.left,
+                            overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                                 fontSize: widget.menuTextSize,
                                 fontWeight: FontWeight.w500,
@@ -194,39 +215,55 @@ class _SwingMenuState extends State<SwingMenu>
   }
 
   ///Add overlay using it's entry
-  void _addOverlay(OverlayEntry entry) {
+  _addOverlay(OverlayEntry entry) {
     Overlay.of(context)?.insert(entry);
   }
-}
 
-///This widget will provide perticular tile with animation
-class SwingAnimationTile extends StatelessWidget {
-  final int index;
-  final double value;
-  final Widget child;
-
-  const SwingAnimationTile(
-      {Key? key, required this.value, required this.child, required this.index})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: index == 0
-          ? const EdgeInsets.only(top: 10)
-          : const EdgeInsets.only(top: 0),
-      child: Opacity(
-        opacity: 1 - value,
-        child: Transform(
-          filterQuality: FilterQuality.medium,
-          alignment: Alignment.bottomCenter,
-          transform: Matrix4.identity()
-            ..translate(0, -10, 0)
-            ..rotateZ(value / 0.05)
-            ..translate(0, 10, 110),
-          child: child,
-        ),
-      ),
-    );
+  ///According to animation type returning different type of Tile with animation
+  Widget _defineAnimationType(
+      AnimationType animationType, double value, Widget? child, int i) {
+    if (animationType == AnimationType.rightToLeft) {
+      return RightToLeftAnimationTile(
+        value: value,
+        child: child!,
+        index: i,
+      );
+    } else if (animationType == AnimationType.leftToRight) {
+      return LeftToRightAnimationTile(
+        value: value,
+        child: child!,
+        index: i,
+      );
+    } else if (animationType == AnimationType.topToBottom) {
+      return TopToBottomAnimationTile(
+        value: value,
+        child: child!,
+        index: i,
+      );
+    } else if (animationType == AnimationType.centerToTop) {
+      return CenterTopAnimationTile(
+        value: value,
+        child: child!,
+        index: i,
+      );
+    } else if (animationType == AnimationType.springAcrossAxis) {
+      return SpringAcrossAxisAnimationTile(
+        value: value,
+        child: child!,
+        index: i,
+      );
+    } else if (animationType == AnimationType.swingAcrossAxis) {
+      return SwingAcrossAxisAnimationTile(
+        value: value,
+        child: child!,
+        index: i,
+      );
+    } else {
+      return LeftToRightAnimationTile(
+        value: value,
+        child: child!,
+        index: i,
+      );
+    }
   }
 }
