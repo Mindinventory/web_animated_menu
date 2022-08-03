@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_hover_menu/hover_menu/hover_animation_widget.dart';
-import 'package:flutter_web_hover_menu/utils/animation_type.dart';
+import 'hover_animation_widget.dart';
+import '../model/header_model.dart';
+import '../model/menu_model.dart';
+import '../utils/animation_type.dart';
+import '../utils/header_position.dart';
 
 ///Your app of entry point where you define Animation type , Customize menu and header
 class EntryPointApp extends StatefulWidget {
@@ -11,43 +14,52 @@ class EntryPointApp extends StatefulWidget {
 }
 
 class _EntryPointAppState extends State<EntryPointApp> {
-  ///Heading titles
-  static const headerTitles = [
-    'Home',
-    'Profile',
-    'Help',
-    'Contact Us',
-    'About Us'
-  ];
+  List<HeaderModel> headerModelList = {
+    HeaderModel(headerId: 1, headerName: 'Home'),
+    HeaderModel(headerId: 2, headerName: 'Profile'),
+    HeaderModel(headerId: 3, headerName: 'Help'),
+    HeaderModel(headerId: 4, headerName: 'Contact Us'),
+    HeaderModel(headerId: 5, headerName: 'About Us'),
+    HeaderModel(headerId: 6, headerName: 'Home'),
+    HeaderModel(headerId: 7, headerName: 'Profile'),
+    HeaderModel(headerId: 8, headerName: 'Help'),
+    HeaderModel(headerId: 9, headerName: 'Contact Us'),
+    HeaderModel(headerId: 5, headerName: 'About Us'),
+  }.toList();
 
-  ///Menu titles
-  static const menuTitles = [
-    'Declarative style',
-    'Premade common',
-    'Stateful hot reload',
-    'Native performance',
-    'Great community',
-  ];
+  List<MenuModel> menuModelList = {
+    MenuModel(menuId: 1, menuName: 'Declarative style'),
+    MenuModel(menuId: 2, menuName: 'Premade common'),
+    MenuModel(menuId: 3, menuName: 'Stateful hot reload'),
+    MenuModel(menuId: 4, menuName: 'Native performance'),
+    MenuModel(menuId: 5, menuName: 'Great community'),
+    MenuModel(menuId: 1, menuName: 'Declarative style'),
+    MenuModel(menuId: 2, menuName: 'Premade common'),
+    MenuModel(menuId: 3, menuName: 'Stateful hot reload'),
+    MenuModel(menuId: 4, menuName: 'Native performance'),
+    MenuModel(menuId: 5, menuName: 'Great community'),
+  }.toList();
 
   @override
   Widget build(BuildContext context) {
-    return const HoverAnimationWidget(
-      headerTiles: headerTitles,
-      headerBoxDecoration: BoxDecoration(
+    return HoverAnimationWidget(
+      headerPosition: HeaderPosition.topLeft,
+      headerTiles: headerModelList,
+      headerBoxDecoration: const BoxDecoration(
           borderRadius: BorderRadius.all(
             Radius.circular(5.0),
           ),
           color: Colors.black),
       headerTextColor: Colors.white,
       headerTextSize: 15.0,
-      menuTiles: menuTitles,
-      menuBoxDecoration: BoxDecoration(
+      menuTiles: menuModelList,
+      menuBoxDecoration: const BoxDecoration(
           borderRadius: BorderRadius.all(
             Radius.circular(7.0),
           ),
           color: Colors.black38),
       menuTextColor: Colors.white,
-      animationType: AnimationType.swingAcrossAxis,
+      animationType: AnimationType.leftToRight,
       menuTextSize: 16.0,
     );
   }
