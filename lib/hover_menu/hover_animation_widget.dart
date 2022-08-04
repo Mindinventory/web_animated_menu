@@ -43,8 +43,8 @@ class HoverAnimationWidget extends StatefulWidget {
   _HoverAnimationWidgetState createState() => _HoverAnimationWidgetState();
 }
 
-class _HoverAnimationWidgetState extends State<HoverAnimationWidget> with SingleTickerProviderStateMixin {
-
+class _HoverAnimationWidgetState extends State<HoverAnimationWidget>
+    with SingleTickerProviderStateMixin {
   bool hovered = false;
 
   @override
@@ -108,7 +108,8 @@ class _HoverAnimationWidgetState extends State<HoverAnimationWidget> with Single
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: widget.headerTiles.length,
-          shrinkWrap: widget.headerPosition == HeaderPosition.topLeft ? false : true,
+          shrinkWrap:
+              widget.headerPosition == HeaderPosition.topLeft ? false : true,
           itemBuilder: (context, index) {
             return Container(
               margin: const EdgeInsets.all(8.0),
@@ -141,5 +142,4 @@ class _HoverAnimationWidgetState extends State<HoverAnimationWidget> with Single
           }),
     );
   }
-
 }

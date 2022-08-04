@@ -33,5 +33,4 @@ class LeftToRightAnimationTile extends StatelessWidget {
       ),
     );
   }
-
 }
