@@ -16,8 +16,8 @@ class MenuTilesWidget extends StatefulWidget {
   final Widget child;
   final int index;
   final bool hovered;
-  final List<MenuModel> menuTiles;
-  final List<HeaderModel> headerTiles;
+  final List<SubMenu> menuTiles;
+  final List<Menu> headerTiles;
   final BoxDecoration menuBoxDecoration;
   final Color menuTextColor;
   final double menuTextSize;

@@ -1,8 +1,8 @@
-class HeaderModel {
+class Menu {
   int? headerId;
   String? headerName;
 
-  HeaderModel({this.headerId, this.headerName});
+  Menu({this.headerId, this.headerName});
 
   @override
   int get hashCode => headerName.hashCode;
@@ -10,7 +10,7 @@ class HeaderModel {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is HeaderModel &&
+      other is Menu &&
           runtimeType == other.runtimeType &&
           headerName == other.headerName;
 }
