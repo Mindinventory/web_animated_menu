@@ -1,8 +1,8 @@
-class MenuModel {
+class SubMenu {
   int? menuId;
   String? menuName;
 
-  MenuModel({this.menuId, this.menuName});
+  SubMenu({this.menuId, this.menuName});
 
   @override
   int get hashCode => menuName.hashCode;
@@ -10,7 +10,7 @@ class MenuModel {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is MenuModel &&
+      other is SubMenu &&
           runtimeType == other.runtimeType &&
           menuName == other.menuName;
 }

@@ -14,35 +14,35 @@ class EntryPointApp extends StatefulWidget {
 }
 
 class _EntryPointAppState extends State<EntryPointApp> {
-  List<HeaderModel> headerModelList = {
-    HeaderModel(headerId: 1, headerName: 'Home'),
-    HeaderModel(headerId: 2, headerName: 'Profile'),
-    HeaderModel(headerId: 3, headerName: 'Help'),
-    HeaderModel(headerId: 4, headerName: 'Contact Us'),
-    HeaderModel(headerId: 5, headerName: 'About Us'),
-    HeaderModel(headerId: 6, headerName: 'Home'),
-    HeaderModel(headerId: 7, headerName: 'Profile'),
-    HeaderModel(headerId: 8, headerName: 'Help'),
-    HeaderModel(headerId: 9, headerName: 'Contact Us'),
-    HeaderModel(headerId: 5, headerName: 'About Us'),
+  List<Menu> headerModelList = {
+    Menu(headerId: 1, headerName: 'Home'),
+    Menu(headerId: 2, headerName: 'Profile'),
+    Menu(headerId: 3, headerName: 'Help'),
+    Menu(headerId: 4, headerName: 'Contact Us'),
+    Menu(headerId: 5, headerName: 'About Us'),
+    Menu(headerId: 6, headerName: 'Home'),
+    Menu(headerId: 7, headerName: 'Profile'),
+    Menu(headerId: 8, headerName: 'Help'),
+    Menu(headerId: 9, headerName: 'Contact Us'),
+    Menu(headerId: 5, headerName: 'About Us'),
   }.toList();
 
-  List<MenuModel> menuModelList = {
-    MenuModel(menuId: 1, menuName: 'Declarative style'),
-    MenuModel(menuId: 2, menuName: 'Premade common'),
-    MenuModel(menuId: 3, menuName: 'Stateful hot reload'),
-    MenuModel(menuId: 4, menuName: 'Native performance'),
-    MenuModel(menuId: 5, menuName: 'Great community'),
-    MenuModel(menuId: 1, menuName: 'Declarative style'),
-    MenuModel(menuId: 2, menuName: 'Premade common'),
-    MenuModel(menuId: 3, menuName: 'Stateful hot reload'),
-    MenuModel(menuId: 4, menuName: 'Native performance'),
-    MenuModel(menuId: 5, menuName: 'Great community'),
+  List<SubMenu> menuModelList = {
+    SubMenu(menuId: 1, menuName: 'Declarative style'),
+    SubMenu(menuId: 2, menuName: 'Premade common'),
+    SubMenu(menuId: 3, menuName: 'Stateful hot reload'),
+    SubMenu(menuId: 4, menuName: 'Native performance'),
+    SubMenu(menuId: 5, menuName: 'Great community'),
+    SubMenu(menuId: 1, menuName: 'Declarative style'),
+    SubMenu(menuId: 2, menuName: 'Premade common'),
+    SubMenu(menuId: 3, menuName: 'Stateful hot reload'),
+    SubMenu(menuId: 4, menuName: 'Native performance'),
+    SubMenu(menuId: 5, menuName: 'Great community'),
   }.toList();
 
   @override
   Widget build(BuildContext context) {
-    return HoverAnimationWidget(
+    return AnimatedHoverMenu(
       headerPosition: HeaderPosition.topLeft,
       headerTiles: headerModelList,
       headerBoxDecoration: const BoxDecoration(

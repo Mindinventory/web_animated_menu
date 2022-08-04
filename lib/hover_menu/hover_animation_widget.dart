@@ -6,44 +6,44 @@ import '../utils/animation_type.dart';
 import '../utils/header_position.dart';
 import '../model/header_model.dart';
 
-class HoverAnimationWidget extends StatefulWidget {
+class AnimatedHoverMenu extends StatefulWidget {
   ///Header properties
-  final List<HeaderModel> headerTiles;
-  final BoxDecoration headerBoxDecoration;
-  final Color headerTextColor;
-  final double headerTextSize;
+  final List<Menu> headerTiles;
+  BoxDecoration? headerBoxDecoration;
+  Color? headerTextColor;
+  double? headerTextSize;
 
   ///Menu properties
-  final List<MenuModel> menuTiles;
-  final BoxDecoration menuBoxDecoration;
-  final Color menuTextColor;
-  final double menuTextSize;
+  final List<SubMenu> menuTiles;
+  BoxDecoration? menuBoxDecoration;
+  Color? menuTextColor;
+  double? menuTextSize;
 
   ///The type of animation
-  final AnimationType animationType;
+  AnimationType? animationType;
 
   ///Header menu position
   final HeaderPosition headerPosition;
 
-  const HoverAnimationWidget({
+  AnimatedHoverMenu({
     Key? key,
-    required this.headerPosition,
     required this.headerTiles,
-    required this.headerBoxDecoration,
-    required this.headerTextColor,
-    required this.headerTextSize,
     required this.menuTiles,
-    required this.menuBoxDecoration,
-    required this.menuTextColor,
-    required this.menuTextSize,
-    required this.animationType,
+    required this.headerPosition,
+    this.headerBoxDecoration,
+    this.headerTextColor,
+    this.headerTextSize,
+    this.menuBoxDecoration,
+    this.menuTextColor,
+    this.menuTextSize,
+    this.animationType,
   }) : super(key: key);
 
   @override
-  _HoverAnimationWidgetState createState() => _HoverAnimationWidgetState();
+  _AnimatedHoverMenuState createState() => _AnimatedHoverMenuState();
 }
 
-class _HoverAnimationWidgetState extends State<HoverAnimationWidget>
+class _AnimatedHoverMenuState extends State<AnimatedHoverMenu>
     with SingleTickerProviderStateMixin {
   bool hovered = false;
 
@@ -118,23 +118,34 @@ class _HoverAnimationWidgetState extends State<HoverAnimationWidget>
                 headerTiles: widget.headerTiles,
                 index: index,
                 hovered: hovered,
-                menuBoxDecoration: widget.menuBoxDecoration,
-                menuTextColor: widget.menuTextColor,
-                menuTextSize: widget.menuTextSize,
+                menuBoxDecoration: widget.menuBoxDecoration ??
+                    const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(7.0),
+                        ),
+                        color: Colors.black38),
+                menuTextColor: widget.menuTextColor ?? Colors.white,
+                menuTextSize: widget.menuTextSize ?? 16.0,
                 headerPosition: widget.headerPosition,
-                animationType: widget.animationType,
+                animationType:
+                    widget.animationType ?? AnimationType.leftToRight,
                 child: Container(
                   width: 190,
                   margin: const EdgeInsets.only(left: 10.0),
-                  decoration: widget.headerBoxDecoration,
+                  decoration: widget.headerBoxDecoration ??
+                      const BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(5.0),
+                          ),
+                          color: Colors.black),
                   alignment: Alignment.center,
                   child: Text(
                     widget.headerTiles[index].headerName ?? '',
                     textAlign: TextAlign.left,
                     style: TextStyle(
-                        fontSize: widget.headerTextSize,
+                        fontSize: widget.headerTextSize ?? 15.0,
                         fontWeight: FontWeight.w500,
-                        color: widget.headerTextColor),
+                        color: widget.headerTextColor ?? Colors.white),
                   ),
                 ),
               ),

@@ -4,7 +4,10 @@ A flutter package that will provide a different type of pretty animation with di
 
 ## Preview
 
-![gif](https://git.mindinventory.com/github/web_animated_menu_flutter/blob/development/bottom_left_align.gif)  ![gif](https://github.com/Mindinventory/web_hover_menu/blob/development/bottom_right_align.gif)   ![gif](https://github.com/Mindinventory/web_hover_menu/blob/development/top_left_align.gif) ![gif](https://github.com/Mindinventory/web_hover_menu/blob/development/top_right_align.gif)
+![gif](https://github.com/Mindinventory/web_hover_menu/blob/development/top_left_align.gif)
+![gif](https://github.com/Mindinventory/web_hover_menu/blob/development/top_right_align.gif)
+![gif](https://git.mindinventory.com/github/web_animated_menu_flutter/blob/development/bottom_left_align.gif)  
+![gif](https://github.com/Mindinventory/web_hover_menu/blob/development/bottom_right_align.gif)   
 
 ## Key Features
 
@@ -53,16 +56,18 @@ A flutter package that will provide a different type of pretty animation with di
     
 ### Attributes
 
-`headerTiles` : header menu list \
-`headerBoxDecoration` : perticular header menu of style \
-`headerTextColor` : header text color \
-`headerTextSize` : header text size \
-`menuTiles` : hover menu list \
-`menuBoxDecoration` : perticular header menu of hover menu \
-`menuTextColor` : text color to hover menu \
-`animationType` : different type of animation Review 'AnimationType' \
-`menuTextSize` : text size to hover menu \
-`headerPosition` : header position defines menu of alignment (position ex: topLeft,topRight) For more Review HeaderPosition
+| prop                       | value    | required/optional | description                                  |
+| -------------------------- | -------- | ----------------- | ---------------------------------------------|
+| headerTiles                | array    | required          | It will provide header menu list.            |
+| menuTiles                  | array    | required          | It will provide hover menu list.             |
+| headerPosition             | custom   | required          | Use for header position defines menu.        |
+| headerBoxDecoration        | style    | optional          | perticular header menu of style.             |
+| headerTextColor            | color    | optional          | Use for header text color.                   |
+| headerTextSize             | double   | optional          | Use for header text size.                    |
+| menuBoxDecoration          | style    | optional          | Use for perticular header menu of hover menu.|
+| menuTextColor              | color    | optional          | Use to  text color to hover menu.            |
+| animationType              | custom   | optional          | Use for different type of animation          |
+| menuTextSize               | double   | optional          | Use for text size to hover menu.             |
 
 ### Dependencies
 
