@@ -30,5 +30,4 @@ class SpringAcrossAxisAnimationTile extends StatelessWidget {
       ),
     );
   }
-
 }
