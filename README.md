@@ -27,6 +27,13 @@ A flutter package that will provide a different type of pretty animation with di
 * Different type of animation in different alignment
 * Mouse hover effect
 
+# Existing Animations
+
+* Left To Right 
+* Right To Left
+* Top To Bottom
+* Bottom To Top
+
 ## Preview
 
 ![gif](https://github.com/Mindinventory/web_animated_menu/blob/main/top_left_align.gif)
@@ -44,7 +51,7 @@ import 'package:web_hover_menu/web_hover_menu.dart';
 
 And add it in its most basic form like it:
 
-```
+``` dart
 HoverAnimationWidget(
 headerTiles: headerModelList,
 headerBoxDecoration: const BoxDecoration(
@@ -95,3 +102,6 @@ Web Hover Animated Menu is [MIT-licensed](/LICENSE).
 We’d be really happy if you send us links to your projects where you use our component. Just send an
 email to sales@mindinventory.com And do let us know if you have any questions or suggestion
 regarding our work.
+
+### Contributors
+<img src="https://avatars.githubusercontent.com/u/88890527" alt="Parth Mehta" width="150" height="150"/>
