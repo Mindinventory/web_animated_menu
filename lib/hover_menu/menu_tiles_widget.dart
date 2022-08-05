@@ -53,7 +53,7 @@ class _MenuTilesWidgetState extends State<MenuTilesWidget>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       _menuHover = List.filled(widget.headerTiles.length, false);
       entry = _overlayEntry();
       entry?.addListener(() {
@@ -225,44 +225,44 @@ class _MenuTilesWidgetState extends State<MenuTilesWidget>
     if (animationType == AnimationType.rightToLeft) {
       return RightToLeftAnimationTile(
         value: value,
-        child: child!,
         index: i,
+        child: child!,
       );
     } else if (animationType == AnimationType.leftToRight) {
       return LeftToRightAnimationTile(
         value: value,
-        child: child!,
         index: i,
+        child: child!,
       );
     } else if (animationType == AnimationType.topToBottom) {
       return TopToBottomAnimationTile(
         value: value,
-        child: child!,
         index: i,
+        child: child!,
       );
     } else if (animationType == AnimationType.centerToTop) {
       return CenterTopAnimationTile(
         value: value,
-        child: child!,
         index: i,
+        child: child!,
       );
     } else if (animationType == AnimationType.springAcrossAxis) {
       return SpringAcrossAxisAnimationTile(
         value: value,
-        child: child!,
         index: i,
+        child: child!,
       );
     } else if (animationType == AnimationType.swingAcrossAxis) {
       return SwingAcrossAxisAnimationTile(
         value: value,
-        child: child!,
         index: i,
+        child: child!,
       );
     } else {
       return LeftToRightAnimationTile(
         value: value,
-        child: child!,
         index: i,
+        child: child!,
       );
     }
   }
