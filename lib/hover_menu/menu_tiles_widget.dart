@@ -53,7 +53,7 @@ class _MenuTilesWidgetState extends State<MenuTilesWidget>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
       _menuHover = List.filled(widget.headerTiles.length, false);
       entry = _overlayEntry();
       entry?.addListener(() {
