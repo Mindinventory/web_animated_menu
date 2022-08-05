@@ -1,59 +1,72 @@
 # Web animated hover menu
 
+<a href="https://flutter.dev/"><img src="https://img.shields.io/badge/flutter-website-deepskyblue.svg" alt="Flutter Website"></a>
+<a href="https://dart.dev"><img src="https://img.shields.io/badge/dart-website-deepskyblue.svg" alt="Dart Website"></a>
+<a href="" style="pointer-events: stroke;" target="_blank">
+<img src="https://img.shields.io/badge/platform-Web-deepskyblue">
+</a>
+<a href="" style="pointer-events: stroke;" target="_blank">
+<img src="https://img.shields.io/badge/platform-Mac-deepskyblue">
+</a>
+<a href="" style="pointer-events: stroke;" target="_blank">
+<img src="https://img.shields.io/badge/platform-Linux-deepskyblue">
+</a>
+<a href="" style="pointer-events: stroke;" target="_blank">
+<img src="https://img.shields.io/badge/platform-Windows-deepskyblue">
+</a>
+<a href=""><img src="https://app.codacy.com/project/badge/Grade/dc683c9cc61b499fa7cdbf54e4d9ff35"/></a>
+<a href="https://github.com/Mindinventory/web_animated_menu/blob/master/LICENSE" style="pointer-events: stroke;" target="_blank">
+<img src="https://img.shields.io/github/license/Mindinventory/web_animated_menu"></a>
+<a href="https://pub.dev/packages/web_animated_menu"><img src="https://img.shields.io/pub/v/web_animated_menu?color=as&label=web_animated_menu&logo=as1&logoColor=blue&style=social"></a>
+<a href="https://github.com/Mindinventory/web_animated_menu"><img src="https://img.shields.io/github/stars/Mindinventory/web_animated_menu?style=social" alt="MIT License"></a>
+
 A flutter package that will provide a different type of pretty animation with different alignment.
-
-## Preview
-
-![gif](https://github.com/Mindinventory/web_hover_menu/blob/development/top_left_align.gif)
-![gif](https://github.com/Mindinventory/web_hover_menu/blob/development/top_right_align.gif)
-![gif](https://git.mindinventory.com/github/web_animated_menu_flutter/blob/development/bottom_left_align.gif)  
-![gif](https://github.com/Mindinventory/web_hover_menu/blob/development/bottom_right_align.gif)   
 
 ## Key Features
 
 * Different type of animation in different alignment
 * Mouse hover effect
 
+## Preview
+
+![gif](https://github.com/Mindinventory/web_animated_menu/blob/main/top_left_align.gif)
+![gif](https://github.com/Mindinventory/web_animated_menu/blob/main/top_right_align.gif)
+![gif](https://github.com/Mindinventory/web_animated_menu/blob/main/bottom_left_align.gif)  
+![gif](https://github.com/Mindinventory/web_animated_menu/blob/main/bottom_right_align.gif)
+
 ## Easy usage
 
-* Step 1:- To use this package, add `web_hover_menu ` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
+Import it to your project file
 
-    ```yaml
-        dependencies:
-          ...
-          web_animated_hover_menu: ^0.0.1
-    ```
+```
+import 'package:web_hover_menu/web_hover_menu.dart';
+```
 
-* Step 2:- Add `web_hover_menu` in your dart file
+And add it in its most basic form like it:
 
-  ```
-        import 'package:web_hover_menu/web_hover_menu.dart';
-  
-        ...
-        
-             child:  HoverAnimationWidget(
-          headerTiles: headerModelList,
-          headerBoxDecoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(5.0),
-              ),
-              color: Colors.black),
-          headerTextColor: Colors.white,
-          headerTextSize: 15.0,
-          menuTiles: menuModelList,
-          menuBoxDecoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(7.0),
-              ),
-              color: Colors.black38),
-          menuTextColor: Colors.white,
-          animationType: AnimationType.rightToLeft,
-          menuTextSize: 16.0,
-          headerPosition: HeaderPosition.bottomRight,
-        ),
-  
-  ```
-    
+```
+HoverAnimationWidget(
+headerTiles: headerModelList,
+headerBoxDecoration: const BoxDecoration(
+    borderRadius: BorderRadius.all(
+      Radius.circular(5.0),
+    ),
+    color: Colors.black),
+headerTextColor: Colors.white,
+headerTextSize: 15.0,
+menuTiles: menuModelList,
+menuBoxDecoration: const BoxDecoration(
+    borderRadius: BorderRadius.all(
+      Radius.circular(7.0),
+    ),
+    color: Colors.black38),
+menuTextColor: Colors.white,
+animationType: AnimationType.rightToLeft,
+menuTextSize: 16.0,
+headerPosition: HeaderPosition.bottomRight),
+
+```
+
 ### Attributes
 
 | prop                       | value    | required/optional | description                                  |
@@ -79,4 +92,6 @@ Web Hover Animated Menu is [MIT-licensed](/LICENSE).
 
 # Let us know!
 
-We’d be really happy if you send us links to your projects where you use our component. Just send an email to sales@mindinventory.com And do let us know if you have any questions or suggestion regarding our work.
+We’d be really happy if you send us links to your projects where you use our component. Just send an
+email to sales@mindinventory.com And do let us know if you have any questions or suggestion
+regarding our work.
