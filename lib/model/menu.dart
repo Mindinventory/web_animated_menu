@@ -10,7 +10,5 @@ class Menu {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Menu &&
-          runtimeType == other.runtimeType &&
-          name == other.name;
+      other is Menu && runtimeType == other.runtimeType && name == other.name;
 }

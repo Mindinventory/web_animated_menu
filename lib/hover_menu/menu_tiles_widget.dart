@@ -221,7 +221,8 @@ class _MenuTilesWidgetState extends State<MenuTilesWidget>
   }
 
   ///According to animation type returning different type of Tile with animation
-  Widget _defineAnimationType(AnimationType animationType, double value, Widget? child, int i) {
+  Widget _defineAnimationType(
+      AnimationType animationType, double value, Widget? child, int i) {
     if (animationType == AnimationType.rightToLeft) {
       return RightToLeftAnimationTile(
         value: value,
