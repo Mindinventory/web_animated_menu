@@ -1,16 +1,16 @@
 class Menu {
-  int? headerId;
-  String? headerName;
+  int? id;
+  String? name;
 
-  Menu({this.headerId, this.headerName});
+  Menu({this.id, this.name});
 
   @override
-  int get hashCode => headerName.hashCode;
+  int get hashCode => name.hashCode;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Menu &&
           runtimeType == other.runtimeType &&
-          headerName == other.headerName;
+          name == other.name;
 }

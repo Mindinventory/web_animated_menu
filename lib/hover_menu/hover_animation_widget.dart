@@ -9,27 +9,31 @@ import '../model/menu.dart';
 class AnimatedHoverMenu extends StatefulWidget {
   ///Header properties
   final List<Menu> headerTiles;
-  BoxDecoration? headerBoxDecoration;
-  Color? headerTextColor;
-  double? headerTextSize;
+  final BoxDecoration? headerBoxDecoration;
+  final Color? headerTextColor;
+  final double? headerTextSize;
 
   ///Menu properties
   final List<SubMenu> menuTiles;
-  BoxDecoration? menuBoxDecoration;
-  Color? menuTextColor;
-  double? menuTextSize;
+  final BoxDecoration? menuBoxDecoration;
+  final Color? menuTextColor;
+  final double? menuTextSize;
 
   ///The type of animation
-  AnimationType? animationType;
+  final AnimationType? animationType;
 
   ///Header menu position
   final HeaderPosition headerPosition;
+
+  ///Background gradient
+  final Widget? backgroundWidget;
 
   AnimatedHoverMenu({
     Key? key,
     required this.headerTiles,
     required this.menuTiles,
     required this.headerPosition,
+    this.backgroundWidget,
     this.headerBoxDecoration,
     this.headerTextColor,
     this.headerTextSize,
@@ -67,12 +71,23 @@ class _AnimatedHoverMenuState extends State<AnimatedHoverMenu>
           alignment: Alignment.topRight,
           children: [
             SizedBox(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                child: Image.asset(
-                  'assets/images/common_background.jpeg',
-                  fit: BoxFit.fill,
-                )),
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              child: widget.backgroundWidget ??
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color(0xfffff8f9),
+                          Color(0xfffef7f8),
+                          Color(0xffecf0fa),
+                        ],
+                      ),
+                    ),
+                  ),
+            ),
             _defineHeaderPosition(widget.headerPosition),
           ],
         ),
@@ -140,7 +155,7 @@ class _AnimatedHoverMenuState extends State<AnimatedHoverMenu>
                           color: Colors.black),
                   alignment: Alignment.center,
                   child: Text(
-                    widget.headerTiles[index].headerName ?? '',
+                    widget.headerTiles[index].name ?? '',
                     textAlign: TextAlign.left,
                     style: TextStyle(
                         fontSize: widget.headerTextSize ?? 15.0,

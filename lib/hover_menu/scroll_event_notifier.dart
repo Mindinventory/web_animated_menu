@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+///It will help to notify widget and update tree
 class ScrollEventNotifier extends ChangeNotifier {
   ScrollEventNotifier(this._isScrolling, this._isReverseScrolling);
 

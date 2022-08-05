@@ -10,6 +10,7 @@ class SpringAcrossAxisAnimationTile extends StatelessWidget {
       {Key? key, required this.value, required this.child, required this.index})
       : super(key: key);
 
+  ///Widget that performs animation spring between x and y
   @override
   Widget build(BuildContext context) {
     return Container(

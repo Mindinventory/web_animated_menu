@@ -10,6 +10,7 @@ class CenterTopAnimationTile extends StatelessWidget {
       {Key? key, required this.value, required this.child, required this.index})
       : super(key: key);
 
+  ///Widget that performs animation from center to top
   @override
   Widget build(BuildContext context) {
     return Container(
