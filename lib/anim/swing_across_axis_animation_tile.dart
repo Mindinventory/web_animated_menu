@@ -19,7 +19,6 @@ class SwingAcrossAxisAnimationTile extends StatelessWidget {
       child: Opacity(
         opacity: 1 - value,
         child: Transform(
-          filterQuality: FilterQuality.medium,
           alignment: Alignment.bottomCenter,
           transform: Matrix4.identity()
             ..translate(0, -10, 0)

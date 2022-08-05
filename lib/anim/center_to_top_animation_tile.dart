@@ -19,7 +19,6 @@ class CenterTopAnimationTile extends StatelessWidget {
       child: Opacity(
         opacity: 1 - value,
         child: Transform(
-          filterQuality: FilterQuality.medium,
           alignment: Alignment.centerLeft,
           transform: Matrix4.identity()
             ..translate(-30, 0, 0)
