@@ -10,6 +10,7 @@ class TopToBottomAnimationTile extends StatelessWidget {
       {Key? key, required this.value, required this.child, required this.index})
       : super(key: key);
 
+  ///Widget that performs animation from bottom to top
   @override
   Widget build(BuildContext context) {
     return Container(

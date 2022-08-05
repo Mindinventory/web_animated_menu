@@ -1,16 +1,16 @@
 class SubMenu {
-  int? menuId;
-  String? menuName;
+  int? id;
+  String? name;
 
-  SubMenu({this.menuId, this.menuName});
+  SubMenu({this.id, this.name});
 
   @override
-  int get hashCode => menuName.hashCode;
+  int get hashCode => name.hashCode;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is SubMenu &&
           runtimeType == other.runtimeType &&
-          menuName == other.menuName;
+          name == other.name;
 }

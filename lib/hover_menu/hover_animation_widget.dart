@@ -9,18 +9,18 @@ import '../model/menu.dart';
 class AnimatedHoverMenu extends StatefulWidget {
   ///Header properties
   final List<Menu> headerTiles;
-  BoxDecoration? headerBoxDecoration;
-  Color? headerTextColor;
-  double? headerTextSize;
+  final BoxDecoration? headerBoxDecoration;
+  final Color? headerTextColor;
+  final double? headerTextSize;
 
   ///Menu properties
   final List<SubMenu> menuTiles;
-  BoxDecoration? menuBoxDecoration;
-  Color? menuTextColor;
-  double? menuTextSize;
+  final BoxDecoration? menuBoxDecoration;
+  final Color? menuTextColor;
+  final double? menuTextSize;
 
   ///The type of animation
-  AnimationType? animationType;
+  final AnimationType? animationType;
 
   ///Header menu position
   final HeaderPosition headerPosition;
@@ -140,7 +140,7 @@ class _AnimatedHoverMenuState extends State<AnimatedHoverMenu>
                           color: Colors.black),
                   alignment: Alignment.center,
                   child: Text(
-                    widget.headerTiles[index].headerName ?? '',
+                    widget.headerTiles[index].name ?? '',
                     textAlign: TextAlign.left,
                     style: TextStyle(
                         fontSize: widget.headerTextSize ?? 15.0,

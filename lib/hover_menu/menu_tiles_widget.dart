@@ -53,7 +53,7 @@ class _MenuTilesWidgetState extends State<MenuTilesWidget>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       _menuHover = List.filled(widget.headerTiles.length, false);
       entry = _overlayEntry();
       entry?.addListener(() {
@@ -62,6 +62,7 @@ class _MenuTilesWidgetState extends State<MenuTilesWidget>
     });
   }
 
+  ///Mouse region of header and perform animation according to it
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
@@ -193,7 +194,7 @@ class _MenuTilesWidgetState extends State<MenuTilesWidget>
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Text(
-                            widget.menuTiles[i].menuName ?? '',
+                            widget.menuTiles[i].name ?? '',
                             textAlign: TextAlign.left,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
@@ -220,8 +221,7 @@ class _MenuTilesWidgetState extends State<MenuTilesWidget>
   }
 
   ///According to animation type returning different type of Tile with animation
-  Widget _defineAnimationType(
-      AnimationType animationType, double value, Widget? child, int i) {
+  Widget _defineAnimationType(AnimationType animationType, double value, Widget? child, int i) {
     if (animationType == AnimationType.rightToLeft) {
       return RightToLeftAnimationTile(
         value: value,

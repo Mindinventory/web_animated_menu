@@ -25,19 +25,19 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Menu> headerModelList = {
-    Menu(headerId: 1, headerName: 'Home'),
-    Menu(headerId: 2, headerName: 'Profile'),
-    Menu(headerId: 3, headerName: 'Help'),
-    Menu(headerId: 4, headerName: 'Contact Us'),
-    Menu(headerId: 5, headerName: 'About Us')
+    Menu(id: 1, name: 'Home'),
+    Menu(id: 2, name: 'Profile'),
+    Menu(id: 3, name: 'Help'),
+    Menu(id: 4, name: 'Contact Us'),
+    Menu(id: 5, name: 'About Us')
   }.toList();
 
   List<SubMenu> menuModelList = {
-    SubMenu(menuId: 1, menuName: 'Declarative style'),
-    SubMenu(menuId: 2, menuName: 'Premade common'),
-    SubMenu(menuId: 3, menuName: 'Stateful hot reload'),
-    SubMenu(menuId: 4, menuName: 'Native performance'),
-    SubMenu(menuId: 5, menuName: 'Great community')
+    SubMenu(id: 1, name: 'Declarative style'),
+    SubMenu(id: 2, name: 'Premade common'),
+    SubMenu(id: 3, name: 'Stateful hot reload'),
+    SubMenu(id: 4, name: 'Native performance'),
+    SubMenu(id: 5, name: 'Great community')
   }.toList();
 
   @override
@@ -72,7 +72,6 @@ class _MyHomePageState extends State<MyHomePage> {
           menuTextSize: 16.0,
         ),
       ],
-
     );
   }
 }

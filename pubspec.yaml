@@ -1,6 +1,6 @@
 name: web_hover_menu
 description: A new Flutter web project that will provide different type of animation with different alignment.
-version: 0.0.1
+version: 0.0.2
 repository : https://github.com/Mindinventory/web_animated_menu
 
 environment:
