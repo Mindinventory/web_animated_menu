@@ -42,36 +42,38 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        SizedBox(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: Image.asset(
-              'assets/images/common_background.jpeg',
-              fit: BoxFit.fill,
-            )),
-        AnimatedHoverMenu(
-          headerPosition: HeaderPosition.topLeft,
-          headerTiles: headerModelList,
-          menuTiles: menuModelList,
-          headerBoxDecoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(5.0),
-              ),
-              color: Colors.black),
-          headerTextColor: Colors.white,
-          headerTextSize: 15.0,
-          menuBoxDecoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(7.0),
-              ),
-              color: Colors.black38),
-          menuTextColor: Colors.white,
-          animationType: AnimationType.leftToRight,
-          menuTextSize: 16.0,
+    return AnimatedHoverMenu(
+      headerPosition: HeaderPosition.bottomRight,
+      headerTiles: headerModelList,
+      menuTiles: menuModelList,
+      backgroundWidget: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xfffff8f9),
+              Color(0xfffef7f8),
+              Color(0xffecf0fa),
+            ],
+          ),
         ),
-      ],
+      ),
+      headerBoxDecoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(
+            Radius.circular(5.0),
+          ),
+          color: Color(0xff996617)),
+      headerTextColor: Colors.white,
+      headerTextSize: 15.0,
+      menuBoxDecoration: BoxDecoration(
+        border: Border.fromBorderSide(
+          BorderSide(color: Color(0xff996617), width: 2),
+        ),
+      ),
+      menuTextColor: Color(0xff996617),
+      animationType: AnimationType.springAcrossAxis,
+      menuTextSize: 16.0,
     );
   }
 }
