@@ -2,21 +2,21 @@
 
 A flutter package that will provide a different type of pretty animation with different alignment.
 
-## Preview
-
-![gif](https://github.com/Mindinventory/web_hover_menu/blob/development/top_left_align.gif)
-![gif](https://github.com/Mindinventory/web_hover_menu/blob/development/top_right_align.gif)
-![gif](https://git.mindinventory.com/github/web_animated_menu_flutter/blob/development/bottom_left_align.gif)  
-![gif](https://github.com/Mindinventory/web_hover_menu/blob/development/bottom_right_align.gif)   
-
 ## Key Features
 
 * Different type of animation in different alignment
 * Mouse hover effect
 
+## Preview
+
+![gif](https://github.com/Mindinventory/web_animated_menu/blob/main/top_left_align.gif)
+![gif](https://github.com/Mindinventory/web_animated_menu/blob/main/top_right_align.gif)
+![gif](https://github.com/Mindinventory/web_animated_menu/blob/main/bottom_left_align.gif)  
+![gif](https://github.com/Mindinventory/web_animated_menu/blob/main/bottom_right_align.gif)   
+
 ## Easy usage
 
-* Step 1:- To use this package, add `web_hover_menu ` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
+* Step 1:- To use this package, add `web_animated_hover_menu ` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
     ```yaml
         dependencies:
@@ -26,7 +26,7 @@ A flutter package that will provide a different type of pretty animation with di
 
 * Step 2:- Add `web_hover_menu` in your dart file
 
-  ```
+  ``` dart
         import 'package:web_hover_menu/web_hover_menu.dart';
   
         ...
