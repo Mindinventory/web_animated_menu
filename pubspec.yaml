@@ -4,8 +4,7 @@ version: 0.0.1
 repository : https://git.mindinventory.com/github/web_animated_menu_flutter/-/tree/development
 
 environment:
-  sdk: ">=2.17.6 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:

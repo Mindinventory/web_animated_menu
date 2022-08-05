@@ -20,7 +20,6 @@ class LeftToRightAnimationTile extends StatelessWidget {
       child: Opacity(
         opacity: 1 - value,
         child: Transform(
-          filterQuality: FilterQuality.medium,
           alignment: Alignment.centerLeft,
           transform: Matrix4.identity()
             ..setEntry(3, 2, 0.01)

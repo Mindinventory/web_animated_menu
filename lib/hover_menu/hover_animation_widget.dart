@@ -1,10 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'menu_tiles_widget.dart';
-import '../model/menu_model.dart';
+import '../model/sub_menu.dart';
 import '../utils/animation_type.dart';
 import '../utils/header_position.dart';
-import '../model/header_model.dart';
+import '../model/menu.dart';
 
 class AnimatedHoverMenu extends StatefulWidget {
   ///Header properties

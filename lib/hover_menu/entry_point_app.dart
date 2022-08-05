@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'hover_animation_widget.dart';
-import '../model/header_model.dart';
-import '../model/menu_model.dart';
+import '../model/menu.dart';
+import '../model/sub_menu.dart';
 import '../utils/animation_type.dart';
 import '../utils/header_position.dart';
 
@@ -19,12 +19,7 @@ class _EntryPointAppState extends State<EntryPointApp> {
     Menu(headerId: 2, headerName: 'Profile'),
     Menu(headerId: 3, headerName: 'Help'),
     Menu(headerId: 4, headerName: 'Contact Us'),
-    Menu(headerId: 5, headerName: 'About Us'),
-    Menu(headerId: 6, headerName: 'Home'),
-    Menu(headerId: 7, headerName: 'Profile'),
-    Menu(headerId: 8, headerName: 'Help'),
-    Menu(headerId: 9, headerName: 'Contact Us'),
-    Menu(headerId: 5, headerName: 'About Us'),
+    Menu(headerId: 5, headerName: 'About Us')
   }.toList();
 
   List<SubMenu> menuModelList = {
@@ -32,12 +27,7 @@ class _EntryPointAppState extends State<EntryPointApp> {
     SubMenu(menuId: 2, menuName: 'Premade common'),
     SubMenu(menuId: 3, menuName: 'Stateful hot reload'),
     SubMenu(menuId: 4, menuName: 'Native performance'),
-    SubMenu(menuId: 5, menuName: 'Great community'),
-    SubMenu(menuId: 1, menuName: 'Declarative style'),
-    SubMenu(menuId: 2, menuName: 'Premade common'),
-    SubMenu(menuId: 3, menuName: 'Stateful hot reload'),
-    SubMenu(menuId: 4, menuName: 'Native performance'),
-    SubMenu(menuId: 5, menuName: 'Great community'),
+    SubMenu(menuId: 5, menuName: 'Great community')
   }.toList();
 
   @override
