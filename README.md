@@ -17,7 +17,7 @@
 <a href=""><img src="https://app.codacy.com/project/badge/Grade/dc683c9cc61b499fa7cdbf54e4d9ff35"/></a>
 <a href="https://github.com/Mindinventory/web_animated_menu/blob/master/LICENSE" style="pointer-events: stroke;" target="_blank">
 <img src="https://img.shields.io/github/license/Mindinventory/web_animated_menu"></a>
-<a href="https://pub.dev/packages/web_animated_menu"><img src="https://img.shields.io/pub/v/web_animated_menu?color=as&label=web_animated_menu&logo=as1&logoColor=blue&style=social"></a>
+<a href="https://pub.dev/packages/web_hover_menu"><img src="https://img.shields.io/pub/v/web_animated_menu?color=as&label=web_animated_menu&logo=as1&logoColor=blue&style=social"></a>
 <a href="https://github.com/Mindinventory/web_animated_menu"><img src="https://img.shields.io/github/stars/Mindinventory/web_animated_menu?style=social" alt="MIT License"></a>
 
 A flutter package that will provide a different type of pretty animation with different alignment.
